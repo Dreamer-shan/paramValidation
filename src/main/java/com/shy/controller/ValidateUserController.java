@@ -1,13 +1,14 @@
 package com.shy.controller;
 
+import com.shy.api.CommonResult;
+import com.shy.validator.Route;
 import com.shy.validator.UserDTO;
+import com.shy.validator.ValidateGroup;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.validation.Valid;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +21,17 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 public class ValidateUserController {
     @PostMapping("/validateUser")
-    public UserDTO userValidate(@RequestBody @Validated UserDTO userDTO){
-        return userDTO;
+    public CommonResult userValidate(@RequestBody @Validated UserDTO userDTO){
+        return CommonResult.success(userDTO);
+
     }
+
+    @PostMapping("/addRoute")
+    public CommonResult addRoute(@RequestBody @Validated({ValidateGroup.RouteValidStart.class}) Route route){
+        return CommonResult.success(route);
+    }
+
+//    public CommonResult addRoute1(@RequestBody @Validated(ValidateGroup.RouteValidStart.class) Route route){
+//
+//    }
 }

@@ -5,7 +5,7 @@ package com.shy.validator;
  *
  * @Author: hongyuan.shan
  * @Date: 2022/09/09/20:44
- * @Description:
+ * @Description: 分组校验接口
  */
 public interface ValidateGroup {
     interface RouteValidStart {}

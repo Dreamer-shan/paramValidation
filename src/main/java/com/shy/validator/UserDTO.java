@@ -33,7 +33,7 @@ public class UserDTO {
 
     @NotNull(message = "年龄不能为空")
     private Integer age;
-
+    @Email
     @NotBlank(message = "邮箱不能为空")
     @Email(message = "邮箱格式错误")
     private String email;

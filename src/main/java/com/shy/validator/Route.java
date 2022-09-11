@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  *
  * @Author: hongyuan.shan
  * @Date: 2022/09/09/20:43
- * @Description:
+ * @Description: 定义一个
  */
 @Data
 public class Route {
